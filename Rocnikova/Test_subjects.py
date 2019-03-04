@@ -41,7 +41,25 @@ def eval(list_in):
         list_out.append(list_person)
     return list_out
 
+def answer_count(list_in):
+    list_out = []
+    for i in range(10):
+        list_question = [0, 0, 0, 0]
+        for j in range(40):
+            if list_in[j][i] == 'A':
+                list_question[0] += 1
+            elif list_in[j][i] == 'B':
+                list_question[1] += 1
+            elif list_in[j][i] == 'C':
+                list_question[2] += 1
+            elif list_in[j][i] == 'D':
+                list_question[3] += 1
+        list_out.append(list_question)
+    return list_out
+
+
 
 list_answers = create_list()
 list_scores = eval(list_answers)
-print(list_scores)
+list_count = answer_count(list_answers)
+print(list_count)
